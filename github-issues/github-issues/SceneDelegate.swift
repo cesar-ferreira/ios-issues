@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  github-issues
 //
-//  Created by Altran3496 on 16/12/20.
+//  Created by César Ferreira on 16/12/20.
 //  Copyright © 2020 cesar. All rights reserved.
 //
 
