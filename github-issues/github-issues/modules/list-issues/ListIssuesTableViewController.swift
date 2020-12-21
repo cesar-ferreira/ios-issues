@@ -10,14 +10,13 @@ import UIKit
 
 class ListIssuesTableViewController: UITableViewController {
 
+    private let viewModel = ListIssuesViewModel()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+            
+        viewModel.delegate = self
+        viewModel.loadIssues(page: "1")
     }
 
     // MARK: - Table view data source
@@ -87,4 +86,10 @@ class ListIssuesTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension ListIssuesTableViewController: ListIssuesViewModelProtocol {
+    func didUpdatIssues() {
+        print(viewModel.issues ?? [])
+    }
 }

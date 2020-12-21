@@ -16,6 +16,10 @@
 		BF3604BA258AAFA0009731F4 /* github_issuesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3604B9258AAFA0009731F4 /* github_issuesUITests.swift */; };
 		BFDA6E18258E7F0100B3574D /* ListIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */; };
 		BFDA6E1A258E7F0D00B3574D /* ListIssuesTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDA6E19258E7F0D00B3574D /* ListIssuesTableViewController.storyboard */; };
+		BFDA6E1E258E83C200B3574D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E1D258E83C200B3574D /* API.swift */; };
+		BFDA6E22258E879F00B3574D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E21258E879F00B3574D /* NetworkManager.swift */; };
+		BFDA6E2D258E897300B3574D /* IssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E2C258E897300B3574D /* IssueResponse.swift */; };
+		BFDA6E2F258EA70200B3574D /* ListIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E2E258EA70200B3574D /* ListIssuesViewModel.swift */; };
 		F1B9291B431A1987153353F9 /* Pods_github_issues_github_issuesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08494FE1E89819B78D4D1A17 /* Pods_github_issues_github_issuesUITests.framework */; };
 		F9A4C1FFFF0CB4ADD57D64A1 /* Pods_github_issuesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81A683430332EACB66D819F /* Pods_github_issuesTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,10 @@
 		BF3604BB258AAFA0009731F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIssuesTableViewController.swift; sourceTree = "<group>"; };
 		BFDA6E19258E7F0D00B3574D /* ListIssuesTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListIssuesTableViewController.storyboard; sourceTree = "<group>"; };
+		BFDA6E1D258E83C200B3574D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		BFDA6E21258E879F00B3574D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BFDA6E2C258E897300B3574D /* IssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResponse.swift; sourceTree = "<group>"; };
+		BFDA6E2E258EA70200B3574D /* ListIssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIssuesViewModel.swift; sourceTree = "<group>"; };
 		CC431FAF33E5A0E605D84883 /* Pods-github-issues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-issues.debug.xcconfig"; path = "Target Support Files/Pods-github-issues/Pods-github-issues.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,7 @@
 		BF360496258AAF9B009731F4 /* github-issues */ = {
 			isa = PBXGroup;
 			children = (
+				BFDA6E1B258E83A400B3574D /* core */,
 				BFDA6E15258E7ECD00B3574D /* modules */,
 				BF360497258AAF9B009731F4 /* AppDelegate.swift */,
 				BF360499258AAF9B009731F4 /* SceneDelegate.swift */,
@@ -165,10 +174,77 @@
 		BFDA6E16258E7ED700B3574D /* list-issues */ = {
 			isa = PBXGroup;
 			children = (
+				BFDA6E23258E88D900B3574D /* data */,
+				BFDA6E24258E88DF00B3574D /* repository */,
+				BFDA6E25258E88E400B3574D /* domain */,
+				BFDA6E26258E88ED00B3574D /* presentation */,
+				BFDA6E27258E88F500B3574D /* view */,
 				BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */,
 				BFDA6E19258E7F0D00B3574D /* ListIssuesTableViewController.storyboard */,
 			);
 			path = "list-issues";
+			sourceTree = "<group>";
+		};
+		BFDA6E1B258E83A400B3574D /* core */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA6E1C258E83AD00B3574D /* network */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		BFDA6E1C258E83AD00B3574D /* network */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA6E1D258E83C200B3574D /* API.swift */,
+				BFDA6E21258E879F00B3574D /* NetworkManager.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		BFDA6E23258E88D900B3574D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA6E2B258E896400B3574D /* model */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BFDA6E24258E88DF00B3574D /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		BFDA6E25258E88E400B3574D /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		BFDA6E26258E88ED00B3574D /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA6E2E258EA70200B3574D /* ListIssuesViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		BFDA6E27258E88F500B3574D /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BFDA6E2B258E896400B3574D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA6E2C258E897300B3574D /* IssueResponse.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		EC2027B0F30DE20B576C26D3 /* Pods */ = {
@@ -442,8 +518,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDA6E18258E7F0100B3574D /* ListIssuesTableViewController.swift in Sources */,
+				BFDA6E2F258EA70200B3574D /* ListIssuesViewModel.swift in Sources */,
 				BF360498258AAF9B009731F4 /* AppDelegate.swift in Sources */,
+				BFDA6E22258E879F00B3574D /* NetworkManager.swift in Sources */,
 				BF36049A258AAF9B009731F4 /* SceneDelegate.swift in Sources */,
+				BFDA6E2D258E897300B3574D /* IssueResponse.swift in Sources */,
+				BFDA6E1E258E83C200B3574D /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
