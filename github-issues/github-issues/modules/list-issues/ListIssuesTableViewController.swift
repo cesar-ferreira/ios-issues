@@ -11,7 +11,7 @@ import UIKit
 class ListIssuesTableViewController: UITableViewController {
 
     private let viewModel = ListIssuesViewModel()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -23,24 +23,29 @@ class ListIssuesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel.issues?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_issue", for: indexPath)
+                
+        let issue = viewModel.issues?[indexPath.row]
+        
+        cell.textLabel?.text = issue?.title
+        cell.detailTextLabel?.text = issue?.state
+        
         return cell
     }
-    */
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+//        self.performSegue(withIdentifier: "showDetails", sender: self)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -76,20 +81,19 @@ class ListIssuesTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showDetails" {
+//            print("navigateToDetails")
+//         }
+//    }
 }
 
 extension ListIssuesTableViewController: ListIssuesViewModelProtocol {
     func didUpdatIssues() {
+        self.tableView.reloadData()
         print(viewModel.issues ?? [])
     }
 }
