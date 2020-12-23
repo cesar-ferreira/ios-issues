@@ -7,7 +7,6 @@
 //
 
 import Moya
-import Mapper
 
 protocol Networkable {
     var provider: MoyaProvider<API> { get }

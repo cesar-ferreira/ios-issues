@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A78E15E42DBE328C673CD911 /* Pods_github_issues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A70A0C213B071152710953 /* Pods_github_issues.framework */; };
+		BF1900B72591893A009F1653 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1900B62591893A009F1653 /* DetailsViewController.swift */; };
+		BF1900B92591894B009F1653 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1900B82591894B009F1653 /* DetailsViewController.storyboard */; };
 		BF360498258AAF9B009731F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF360497258AAF9B009731F4 /* AppDelegate.swift */; };
 		BF36049A258AAF9B009731F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF360499258AAF9B009731F4 /* SceneDelegate.swift */; };
 		BF3604A1258AAFA0009731F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3604A0258AAFA0009731F4 /* Assets.xcassets */; };
 		BF3604A4258AAFA0009731F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3604A2258AAFA0009731F4 /* LaunchScreen.storyboard */; };
 		BF3604AF258AAFA0009731F4 /* github_issuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3604AE258AAFA0009731F4 /* github_issuesTests.swift */; };
 		BF3604BA258AAFA0009731F4 /* github_issuesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3604B9258AAFA0009731F4 /* github_issuesUITests.swift */; };
+		BF84D0992592625C00E802A4 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84D0982592625C00E802A4 /* StoryboardInstantiable.swift */; };
 		BFDA6E18258E7F0100B3574D /* ListIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */; };
 		BFDA6E1A258E7F0D00B3574D /* ListIssuesTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDA6E19258E7F0D00B3574D /* ListIssuesTableViewController.storyboard */; };
 		BFDA6E1E258E83C200B3574D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA6E1D258E83C200B3574D /* API.swift */; };
@@ -50,6 +53,8 @@
 		56A70A0C213B071152710953 /* Pods_github_issues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_issues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B2620B8A4E212423247782 /* Pods-github-issuesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-issuesTests.release.xcconfig"; path = "Target Support Files/Pods-github-issuesTests/Pods-github-issuesTests.release.xcconfig"; sourceTree = "<group>"; };
 		B81A683430332EACB66D819F /* Pods_github_issuesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_issuesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1900B62591893A009F1653 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		BF1900B82591894B009F1653 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		BF360494258AAF9B009731F4 /* github-issues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-issues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF360497258AAF9B009731F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF360499258AAF9B009731F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		BF3604B5258AAFA0009731F4 /* github-issuesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-issuesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3604B9258AAFA0009731F4 /* github_issuesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_issuesUITests.swift; sourceTree = "<group>"; };
 		BF3604BB258AAFA0009731F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF84D0982592625C00E802A4 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIssuesTableViewController.swift; sourceTree = "<group>"; };
 		BFDA6E19258E7F0D00B3574D /* ListIssuesTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListIssuesTableViewController.storyboard; sourceTree = "<group>"; };
 		BFDA6E1D258E83C200B3574D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -107,6 +113,15 @@
 				B81A683430332EACB66D819F /* Pods_github_issuesTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF1900B52591891F009F1653 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				BF1900B62591893A009F1653 /* DetailsViewController.swift */,
+				BF1900B82591894B009F1653 /* DetailsViewController.storyboard */,
+			);
+			path = details;
 			sourceTree = "<group>";
 		};
 		BF36048B258AAF9B009731F4 = {
@@ -163,9 +178,18 @@
 			path = "github-issuesUITests";
 			sourceTree = "<group>";
 		};
+		BF84D0972592624E00E802A4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF84D0982592625C00E802A4 /* StoryboardInstantiable.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		BFDA6E15258E7ECD00B3574D /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				BF1900B52591891F009F1653 /* details */,
 				BFDA6E16258E7ED700B3574D /* list-issues */,
 			);
 			path = modules;
@@ -175,8 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				BFDA6E23258E88D900B3574D /* data */,
-				BFDA6E24258E88DF00B3574D /* repository */,
-				BFDA6E25258E88E400B3574D /* domain */,
 				BFDA6E26258E88ED00B3574D /* presentation */,
 				BFDA6E27258E88F500B3574D /* view */,
 				BFDA6E17258E7F0100B3574D /* ListIssuesTableViewController.swift */,
@@ -188,6 +210,7 @@
 		BFDA6E1B258E83A400B3574D /* core */ = {
 			isa = PBXGroup;
 			children = (
+				BF84D0972592624E00E802A4 /* utils */,
 				BFDA6E1C258E83AD00B3574D /* network */,
 			);
 			path = core;
@@ -208,20 +231,6 @@
 				BFDA6E2B258E896400B3574D /* model */,
 			);
 			path = data;
-			sourceTree = "<group>";
-		};
-		BFDA6E24258E88DF00B3574D /* repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = repository;
-			sourceTree = "<group>";
-		};
-		BFDA6E25258E88E400B3574D /* domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = domain;
 			sourceTree = "<group>";
 		};
 		BFDA6E26258E88ED00B3574D /* presentation */ = {
@@ -370,6 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1900B92591894B009F1653 /* DetailsViewController.storyboard in Resources */,
 				BF3604A4258AAFA0009731F4 /* LaunchScreen.storyboard in Resources */,
 				BF3604A1258AAFA0009731F4 /* Assets.xcassets in Resources */,
 				BFDA6E1A258E7F0D00B3574D /* ListIssuesTableViewController.storyboard in Resources */,
@@ -520,6 +530,8 @@
 				BFDA6E18258E7F0100B3574D /* ListIssuesTableViewController.swift in Sources */,
 				BFDA6E2F258EA70200B3574D /* ListIssuesViewModel.swift in Sources */,
 				BF360498258AAF9B009731F4 /* AppDelegate.swift in Sources */,
+				BF1900B72591893A009F1653 /* DetailsViewController.swift in Sources */,
+				BF84D0992592625C00E802A4 /* StoryboardInstantiable.swift in Sources */,
 				BFDA6E22258E879F00B3574D /* NetworkManager.swift in Sources */,
 				BF36049A258AAF9B009731F4 /* SceneDelegate.swift in Sources */,
 				BFDA6E2D258E897300B3574D /* IssueResponse.swift in Sources */,
