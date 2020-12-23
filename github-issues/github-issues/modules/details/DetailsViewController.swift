@@ -19,8 +19,6 @@ class DetailsViewController: UIViewController, StoryboardInstantiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(issue)
         setupUI()
     }
     
@@ -41,29 +39,6 @@ class DetailsViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setupDate() {
-//        guard let isoDate = issue?.createdAt else { return }
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-//        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-//
-//        guard let date = dateFormatter.date(from:isoDate) else { return }
-//        let resultString = dateFormatter.string(from: date)
-
-        
-        
-//        let inputFormatter = DateFormatter()
-//        inputFormatter.dateFormat = "dd/MM/yyyy hh:mm:ss"
-//        let date = inputFormatter.date(from: issue?.createdAt ?? "")
-//        let resultString = inputFormatter.string(from: date!)
-//        print(resultString)
-        
-        
-        
-//        let dateFormatterGet = DateFormatter()
-//        dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-//
-//        let date: NSDate = dateFormatterGet.date(from: issue?.createdAt ?? "")! as NSDate
         dateLabel.text = issue?.createdAt
 
     }
