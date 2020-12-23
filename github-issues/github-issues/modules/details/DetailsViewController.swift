@@ -30,6 +30,10 @@ class DetailsViewController: UIViewController, StoryboardInstantiable {
     
     private func setupImage() {
         imageProfile.downloaded(from: issue?.user.avatarURL ?? "")
+        imageProfile?.layer.cornerRadius = (imageProfile?.frame.size.width ?? 0.0) / 2
+        imageProfile?.clipsToBounds = true
+        imageProfile?.layer.borderWidth = 3.0
+        imageProfile?.layer.borderColor = UIColor.black.cgColor
     }
     
     private func setupLabel() {
@@ -39,7 +43,18 @@ class DetailsViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setupDate() {
-        dateLabel.text = issue?.createdAt
+       
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [
+            .withFullDate,
+            .withTime,
+            .withDashSeparatorInDate,
+            .withColonSeparatorInTime
+        ]
+        
+        let date = formatter.date(from: issue!.createdAt)
+        print(date)
+        dateLabel.text = date?.description
 
     }
     
@@ -71,9 +86,16 @@ extension UIImageView {
 }
 
 extension Date {
-   func getFormattedDate(format: String) -> String {
-        let dateformat = DateFormatter()
-        dateformat.dateFormat = format
-        return dateformat.string(from: self)
+    init(dateString:String) {
+        self = Date.iso8601Formatter.date(from: dateString)!
     }
+
+    static let iso8601Formatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullDate,
+                                          .withTime,
+                                          .withDashSeparatorInDate,
+                                          .withColonSeparatorInTime]
+        return formatter
+    }()
 }

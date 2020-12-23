@@ -7,10 +7,29 @@
 //
 
 import XCTest
+import Moya
 @testable import github_issues
 
 class github_issuesTests: XCTestCase {
 
+//    var networkManager: NetworkManager!
+    var provider: MoyaProvider<API>!
+
+    override func setUp() {
+        super.setUp()
+
+        // A mock provider with a mocking `endpointClosure` that stub immediately
+        provider = MoyaProvider<API>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+    }
+
+    func customEndpointClosure(_ target: API) -> Endpoint {
+        return Endpoint(url: URL(target: target).absoluteString,
+                        sampleResponseClosure: { .networkResponse(200, target.testSampleData) },
+                        method: target.method,
+                        task: target.task,
+                        httpHeaderFields: target.headers)
+    }
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -31,4 +50,15 @@ class github_issuesTests: XCTestCase {
         }
     }
 
+}
+
+extension API {
+    var testSampleData: Data {
+        switch self {
+        case .issues(page: _):
+            // Returning all-popular-movies.json
+            let url = Bundle(for: github_issuesTests.self).url(forResource: "all-issues", withExtension: "json")!
+            return try! Data(contentsOf: url)
+        }
+    }
 }
